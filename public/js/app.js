@@ -1,15 +1,3 @@
-// let seconds = 0;
-// let intervale = setInterval(() => {
-//     seconds++
-//     console.log(seconds);
-//     if (seconds == 10) {
-//         clearInterval(intervale)
-//     }
-    
-// }, 1000);
-
-
-//function
 
 // Exercise 1:
  //Greetings
@@ -148,14 +136,86 @@ isVowel("b");
 // Exercise 11: Largest in Array
 // Create a function called largestInArray that takes an array of numbers as a parameter and prints the largest number in the array to the console. Use the Math.max function. Call the function with different arrays.
 
+
+function largestInArray(arr) {
+    let largest = Math.max(...arr)
+
+    console.log("The largest number in the array is: " + largest);
+
+}
+
+largestInArray([1, 5, 6, 3]);
+largestInArray([5, 9, -14, 10]);
+
+
+
 // Exercise 12: Prime Number Checker
 // Create a function called isPrime that takes a number as a parameter and prints whether the number is a prime number or not to the console. Use loops and conditional statements. Call the function with different numbers.
+
+
+function isPrime(number) {
+    let Prime = true;
+
+    if (number < 2) {
+        Prime = false;
+    }
+    else {
+        for (let index = 2; index < number; index++) {
+            if (number % index === 0) {
+                Prime = false;
+            }
+        }
+    }
+
+    console.log(Prime);
+}
+
+isPrime(29);
+isPrime(30);
+
 
 // Exercise 13: Sum of Digits
 // Create a function called sumOfDigits that takes a positive integer as a parameter and calculates the sum of its digits. Print the result to the console.
 
+
+
+function sumOfDigits(int) {
+    let sum = 0;
+
+    while (int > 0) {
+        sum += int % 10;
+        int = Math.floor(int / 10);
+    }
+
+    console.log("The sum of the digits is: " + sum);
+
+}
+
+sumOfDigits(3214);
+sumOfDigits(98);
+
+//Exercice 14:
 // Create a function called arrayIntersection that takes two arrays as parameters and returns a new array containing the common elements between them.
 
+
+function arrayIntersection(arr1, arr2) {
+    let result = [];
+
+
+    for (let i = 0; i < arr1.length; i++) {
+
+        if (arr2.includes(arr1[i])) {
+            result.push(arr1[i]);
+        }
+    }
+
+    return result;
+}
+
+let arr1 = [1, 2, 5, 4, 1, 8, 7, 4];
+let arr2 = [1, 4, 7, 8];
+
+console.log(arrayIntersection(arr1, arr2));
 
 
 
